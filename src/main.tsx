@@ -4,7 +4,8 @@ import './index.css'
 import Home from './features/Home/Home'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import App from './features/App'
-import RoundRobin from './features/Robin'
+import AddPlayers from './features/Home/AddPlayers'
+import { CreateTournament } from './features/Home/CreateTournament'
 
 const router = createBrowserRouter([
   {
@@ -12,8 +13,12 @@ const router = createBrowserRouter([
     Component: Home,
   },
   {
-    path: '/round-robin',
-    Component: RoundRobin
+    path: '/add-player',
+    Component: AddPlayers
+  },
+  {
+    path: '/create-tournament',
+    Component: CreateTournament
   }
 ])
 
