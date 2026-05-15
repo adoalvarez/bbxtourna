@@ -1,28 +1,13 @@
 @import "tailwindcss";
-
-:root {
-  --main-color: #F5EFE6;
-  --text-color: #021526;
-  --primary-color: #6D94C5;
-  --secondary-color: #CBDCEB;
-  --tertiary-color: #E2E2B6;
-
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake, coffee;
 }
-
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
 
 html, body {
   height: 100%;
 
-  background-color: var(--main-color);
-
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 16px;
-  color: var(--dark-color);
 }
 
 a {
@@ -38,69 +23,9 @@ ul, ol {
   height: auto;
 }
 
-.table-container {
-  width: 100%;
-  max-width: 1000px;
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-thead {
-  background: linear-gradient(135deg, var(--primary-color), var(--text-color));
-  color: white;
-}
-
-th {
-  text-align: left;
-  padding: 18px 24px;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-tbody tr {
-  border-bottom: 1px solid #eef2f7;
-  transition: background 0.2s ease;
-}
-
-tbody tr:hover {
-  background: #f8faff;
-}
-
-td {
-  padding: 18px 24px;
-  color: #374151;
-  font-size: 15px;
-}
-
-button {
-  background-color: var(--primary-color);
-  display: inline-block;
-  align-self: flex-start;
-  padding: 0.5rem 1rem;
-  border-radius: 0.30rem;
-  cursor: pointer;
-  border: none;
-  font-size: medium;
-  font-weight: 600;
-  color: white;
-}
-
-button:active {
-  background-color: var(--secondary-color);
-}
-
 .Page {
   margin: auto;
   width: 75%;
   height: 100vh;
   padding: 16px 24px;
-  /* background-color: var(--secondary-color); */
 }

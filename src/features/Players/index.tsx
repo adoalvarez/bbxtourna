@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Button from "../../shared/components/Button";
-import AddPlayerModal from "../../shared/components/modals/AddPlayerModal";
+// import Button from "../../shared/components/Button";
+// import AddPlayerModal from "../../shared/components/modals/AddPlayerModal";
 import { usePlayerContext } from "../../app/PlayerStore";
 
 const Players = () => {
@@ -13,11 +13,11 @@ const Players = () => {
     <div className="flex flex-col gap-4">
       <div className="flex flex-col">
         <h1 className="text-center">BLADERS</h1>
-        <Button
+        <button
           onClick={toggleModal}
         >
           Add Player
-        </Button>
+        </button>
       </div>
       <div className="playersList">
         <div>
@@ -53,9 +53,9 @@ const Players = () => {
         </div> */}
       </div>
 
-      {addPlayerModal && 
+      {/* {addPlayerModal && 
         <AddPlayerModal onClose={toggleModal} />
-      }
+      } */}
     </div>
   )
 }

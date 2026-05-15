@@ -1,4 +1,6 @@
-import Card from "../../shared/components/Card";
+// import Card from "../../shared/components/Card";
+
+import Card from "../../shared/component/Card";
 
 const Home = () => {
 
@@ -11,59 +13,17 @@ const Home = () => {
             <label className="text-2xl font-extrabold uppercase w-full text-center">Matches</label>
             <div className="ongoing-matches">
               <label className="text-lg uppercase font-bold">Ongoing Matches</label>
-              <div className="ongoing-matches-container grid grid-cols-3 gap-3">
-                <Card title="match 1">
-                  <>
-                    <div className="flex flex-row w-full">
-                      <label>Status:</label>
-                      <span>Ongoing</span>
-                    </div>
-                    <div className="flex flex-row w-full">
-                      <label>Rounds left:</label>
-                      <span>3</span>
-                    </div>
-                  </>
-                </Card>
-                <Card title="match 1">
-                  <>
-                    <div className="flex flex-row w-full">
-                      <label>Status:</label>
-                      <span>Ongoing</span>
-                    </div>
-                    <div className="flex flex-row w-full">
-                      <label>Rounds left:</label>
-                      <span>3</span>
-                    </div>
-                  </>
-                </Card>
-                <Card title="match 1">
-                  <>
-                    <div className="flex flex-row w-full">
-                      <label>Status:</label>
-                      <span>Ongoing</span>
-                    </div>
-                    <div className="flex flex-row w-full">
-                      <label>Rounds left:</label>
-                      <span>3</span>
-                    </div>
-                  </>
+              <div className="ongoing-matches-container grid grid-cols-3 gap-3 mt-2">
+                <Card title="Match 1">
+                  test
                 </Card>
               </div>
             </div>
             <div className="recent-matches">
               <label className="text-lg uppercase font-bold">Recent Matches</label>
-              <div className="ongoing-matches-container grid grid-cols-3 gap-3">
-                <Card title="match 1">
-                  <>
-                    <div className="flex flex-row w-full">
-                      <label>Status:</label>
-                      <span>Completed</span>
-                    </div>
-                    <div className="flex flex-row w-full">
-                      <label>Winner:</label>
-                      <span>Ado</span>
-                    </div>
-                  </>
+              <div className="ongoing-matches-container grid grid-cols-3 gap-3 mt-2">
+                <Card title="Match 2">
+                  Test
                 </Card>
               </div>
             </div>
@@ -72,8 +32,8 @@ const Home = () => {
         {/** Leaderboard */}
         <div className="leaderboard justify-center items-center flex flex-col mt-6">
           <label className="text-2xl font-extrabold uppercase">Leaderboard</label>
-          <div className="table-container">
-            <table>
+          <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-200 w-3/4 mt-2">
+            <table className="table">
               <thead>
                 <tr>
                   <th>Rank</th>
