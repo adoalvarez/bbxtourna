@@ -6,12 +6,10 @@ interface AppProps {
 
 const App = (props: AppProps) => {
   return (
-    <div className="Page">
-      <div className="body">
-        {props.children}
-      </div>
+    <div className="body">
+      {props.children}
     </div>
-  )
+)
 }
 
 export default App;

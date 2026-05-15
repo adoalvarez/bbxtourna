@@ -4,8 +4,8 @@ import './modal.css';
 interface ModalProps {
   children: React.ReactNode;
   title?: string;
-  onClose: () => void;
-  onConfirm: () => void;
+  onClose?: () => void;
+  onConfirm?: () => void;
 }
 
 const Modal = ({ 
@@ -26,18 +26,19 @@ const Modal = ({
           {children}
         </div>
         <div className="modal-footer">
-          <Button 
+          {onClose && <Button 
             onClick={onClose}
             className="modal-button"
           >
             Cancel
-          </Button>
-          <Button 
+          </Button>}
+          {onConfirm && <Button 
             onClick={onConfirm}
             className="modal-button"
+            type='submit'
           >
             Confirm
-          </Button>
+          </Button>}
         </div>
       </div>
       

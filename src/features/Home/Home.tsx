@@ -1,20 +1,100 @@
-import { useNavigate } from "react-router";
-import Button from "../../shared/components/Button";
-// import Button from "../../shared/components/Button";
+import Card from "../../shared/components/Card";
 
 const Home = () => {
-  const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="Home">
-        <div className="flex flex-col">
-          <label className="items-center content-center justify-center flex">Welcome</label>
-          <Button onClick={() => navigate("/create-tournament")}>Create a Tournament</Button>
-          <Button onClick={() => navigate("/add-player")}> Add Players </Button>
+    <div className="Home">
+      <div className="flex flex-col">
+        {/* <label className="items-center content-center justify-center flex">Welcome</label> */}
+        <div className="matches">
+          <div className="matches-container flex flex-col w-full gap-4">
+            <label className="text-2xl font-extrabold uppercase w-full text-center">Matches</label>
+            <div className="ongoing-matches">
+              <label className="text-lg uppercase font-bold">Ongoing Matches</label>
+              <div className="ongoing-matches-container grid grid-cols-3 gap-3">
+                <Card title="match 1">
+                  <>
+                    <div className="flex flex-row w-full">
+                      <label>Status:</label>
+                      <span>Ongoing</span>
+                    </div>
+                    <div className="flex flex-row w-full">
+                      <label>Rounds left:</label>
+                      <span>3</span>
+                    </div>
+                  </>
+                </Card>
+                <Card title="match 1">
+                  <>
+                    <div className="flex flex-row w-full">
+                      <label>Status:</label>
+                      <span>Ongoing</span>
+                    </div>
+                    <div className="flex flex-row w-full">
+                      <label>Rounds left:</label>
+                      <span>3</span>
+                    </div>
+                  </>
+                </Card>
+                <Card title="match 1">
+                  <>
+                    <div className="flex flex-row w-full">
+                      <label>Status:</label>
+                      <span>Ongoing</span>
+                    </div>
+                    <div className="flex flex-row w-full">
+                      <label>Rounds left:</label>
+                      <span>3</span>
+                    </div>
+                  </>
+                </Card>
+              </div>
+            </div>
+            <div className="recent-matches">
+              <label className="text-lg uppercase font-bold">Recent Matches</label>
+              <div className="ongoing-matches-container grid grid-cols-3 gap-3">
+                <Card title="match 1">
+                  <>
+                    <div className="flex flex-row w-full">
+                      <label>Status:</label>
+                      <span>Completed</span>
+                    </div>
+                    <div className="flex flex-row w-full">
+                      <label>Winner:</label>
+                      <span>Ado</span>
+                    </div>
+                  </>
+                </Card>
+              </div>
+            </div>
+          </div>
         </div>
+        {/** Leaderboard */}
+        <div className="leaderboard justify-center items-center flex flex-col mt-6">
+          <label className="text-2xl font-extrabold uppercase">Leaderboard</label>
+          <div className="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Blader</th>
+                  <th>Match Win - Loss</th>
+                  <th>Total Match</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Player 1</td>
+                  <td>1 - 0</td>
+                  <td>1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
-      
     </div>
   )
 }

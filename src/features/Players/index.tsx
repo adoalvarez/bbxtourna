@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Button from "../../shared/components/Button";
 import AddPlayerModal from "../../shared/components/modals/AddPlayerModal";
+import { usePlayerContext } from "../../app/PlayerStore";
 
-const AddPlayers = () => {
+const Players = () => {
+  const { state } = usePlayerContext();
   const [addPlayerModal, setAddPlayerModal] = useState<boolean>(false);
 
   const toggleModal = () => setAddPlayerModal(!addPlayerModal);
@@ -22,7 +24,9 @@ const AddPlayers = () => {
           <h2>Current Players</h2>
         </div>
         <ul>
-          <li>Player 1</li>
+          {state.players.map((player, index) => (
+            <li key={index}>{player.name}</li>
+          ))}
         </ul>
         {/* <div className="table-container">
           <table className="w-full">
@@ -56,4 +60,4 @@ const AddPlayers = () => {
   )
 }
 
-export default AddPlayers;
+export default Players;
