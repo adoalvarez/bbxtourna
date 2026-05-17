@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 // import Button from "../../shared/components/Button";
 // import CreateTournamentModal from "../../shared/components/modals/CreateTournamentModal";
 import { useState } from "react";
+import Modal from "../../shared/component/Modal";
 
 const Tournament = () => {
   const [createTournamentModal, setCreateTournamentModal] = useState<boolean>(false);
@@ -25,7 +26,9 @@ const Tournament = () => {
         </div>
       </div>
 
-      {/* {createTournamentModal && <CreateTournamentModal onClose={toggleCreateTournamentModal} />} */}
+      <Modal title="Create Tournament" isOpen={createTournamentModal} closeModal={toggleCreateTournamentModal}>
+        <div> Test </div>
+      </Modal>
     </div>
   )
 }
