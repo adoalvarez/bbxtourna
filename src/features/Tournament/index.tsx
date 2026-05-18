@@ -27,7 +27,9 @@ const Tournament = () => {
       </div>
 
       <Modal title="Create Tournament" isOpen={createTournamentModal} closeModal={toggleCreateTournamentModal}>
-        <div> Test </div>
+        <form>
+          
+        </form>
       </Modal>
     </div>
   )
