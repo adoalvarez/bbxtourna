@@ -1,12 +1,23 @@
 import { useNavigate } from "react-router";
-// import Button from "../../shared/components/Button";
-// import CreateTournamentModal from "../../shared/components/modals/CreateTournamentModal";
 import { useState } from "react";
 import Modal from "../../shared/component/Modal";
+import Form from "../../shared/component/Forms/Form";
+import FormInput from "../../shared/component/Forms/FormInput";
+import FormSelect, { type SelectOption } from "../../shared/component/Forms/FormSelect";
+import FormMultiSelect from "../../shared/component/Forms/FormMultiSelect";
+
+interface FormValues {
+  name: string;
+  format: SelectOption;
+}
 
 const Tournament = () => {
   const [createTournamentModal, setCreateTournamentModal] = useState<boolean>(false);
   const navigate = useNavigate();
+
+  const submitData = (data: FormValues) => {
+    console.log(data)
+  }
 
   const toggleCreateTournamentModal = () => setCreateTournamentModal(!createTournamentModal);
 
@@ -27,9 +38,65 @@ const Tournament = () => {
       </div>
 
       <Modal title="Create Tournament" isOpen={createTournamentModal} closeModal={toggleCreateTournamentModal}>
-        <form>
-          
-        </form>
+        <Form 
+          onSubmit={submitData}
+          buttons={[
+            {
+              label: 'Cancel',
+              className: 'w-fit',
+              action: toggleCreateTournamentModal
+            },
+            {
+              label: 'Create',
+              className: 'w-fit',
+              type: 'submit',
+            }
+          ]}
+        >
+          <FormInput 
+            id="name"
+            label="Tournament Name"
+            isRequired={true}
+            type="text"
+            placeholder="Enter tournament name"
+            className="w-full"
+          />
+          <FormSelect 
+            id="format"
+            label="Tournament format"
+            isRequired={true}
+            placeholder="Select format"
+            options={[
+              {
+                value: 'RR',
+                label: 'Round Robin'
+              },
+              {
+                value: 'DD',
+                label: 'Double Elimination'
+              }
+            ]}
+          />
+          <FormMultiSelect
+            id="players"
+            label="Players"
+            isRequired
+            options={[
+              {
+                label: "Valorant",
+                value: "valorant",
+              },
+              {
+                label: "Dota 2",
+                value: "dota2",
+              },
+              {
+                label: "League of Legends",
+                value: "lol",
+              },
+            ]}
+          />
+        </Form>
       </Modal>
     </div>
   )

@@ -12,12 +12,12 @@ const Modal = ({
 }: ModalProps) => {
   return (
     <div className={`modal ${isOpen ? 'modal-open' : ''}`}>
-      <div className="modal-box">
+      <div className="modal-box w-2/4 max-w-2/4">
         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={closeModal}>X</button>
         <div className="text-lg font-bold">
           {title}
         </div>
-        <div>
+        <div className="">
           {children}
         </div>
       </div>
